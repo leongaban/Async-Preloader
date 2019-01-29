@@ -4,7 +4,7 @@ import thunkMiddleware from 'redux-thunk'
 
 // import { getProgress } from './services/api'
 
-const exampleInitialState = {
+const initialState = {
   loaders: []
 }
 
@@ -14,12 +14,12 @@ export const actionTypes = {
 
 const updateLoaders = (state, { payload }) => {
   const { loaders } = state;
-  loaders.push(payload);
-  return loaders;
+  const newArray = new Array(payload, ...loaders);
+  return newArray;
 }
 
 // REDUCERS
-export const reducer = (state = exampleInitialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.ADD_LOADER:
       const newLoaders = updateLoaders(state, action);
@@ -55,7 +55,7 @@ export const addLoader = () => dispatch => {
   getProgress(dispatch);
 }
 
-export function initializeStore (initialState = exampleInitialState) {
+export function initializeStore (initialState = initialState) {
   return createStore(
     reducer,
     initialState,

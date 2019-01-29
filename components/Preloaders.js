@@ -4,15 +4,18 @@ class Preloaders extends React.Component {
   }
 
   render() {
-    const { loaders } = this.props;
+    const { loaders, preloaders } = this.props;
     console.log('loaders', loaders);
     return (
       <div className="preloaders">
-        <ul>
-          {loaders.map((loader) => {
-            return (<li>Loader! {loader}</li>);
+        <div>
+          {preloaders.map((preloader, i) => {
+            return (<span key={i}>{preloader}</span>);
           })}
-        </ul>
+          {loaders.map((loader, i) => {
+            return (<li key={i}>Data Loaded!</li>);
+          })}
+        </div>
       </div>
     );
   }

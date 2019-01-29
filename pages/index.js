@@ -7,6 +7,10 @@ import '../global.scss'
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    
+    this.state = {
+      preloaders: []
+    }
 
     this.handleOnAddLoader = this.handleOnAddLoader.bind(this);
   }
@@ -15,9 +19,15 @@ class Home extends React.Component {
     console.log('componentWillReceiveProps', this.props);
   }
 
+  componentDidUpdate() {
+    console.log('componentDidUpdate', this.props);
+  }
+
   render() {
-    console.log('this.props', this.props);
     const { loaders } = this.props;
+    const { preloaders } = this.state;
+    console.log('preloaders', preloaders);
+    console.log('loaders', loaders);
 
     return (
       <div className="container">
@@ -25,13 +35,17 @@ class Home extends React.Component {
           <h1>Hello world.</h1>
           <button onClick={this.handleOnAddLoader}>Add a Progress Bar</button>
         </div>
-        <Preloaders loaders={loaders} />
+        <Preloaders preloaders={preloaders} loaders={loaders} />
       </div>
     );
   }
 
   handleOnAddLoader() {
     console.log('> handleOnAddLoader clicked.');
+    const { preloaders } = this.state;
+    this.setState({
+      preloaders: new Array('preloader', ...preloaders)
+    });
     this.props.addLoader();
   }
 }

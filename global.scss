@@ -66,7 +66,6 @@ canvas { display: block; vertical-align: bottom; }
 // removes chrome input highlight
 *:focus { outline: 0; }
 
-
 html,
 body {
   width: 100%;
@@ -113,7 +112,18 @@ body {
 
 .preloaders {
   margin-top: 20px;
+  padding: 5px;
   min-height: 20px;
   border-radius: 5px;
   border: 1px dotted gray;
+
+  span {
+    margin: 5px 0;
+    width: 100%;
+    border: 1px dotted red;
+  }
+
+  li {
+    list-style: none;
+  }
 }
