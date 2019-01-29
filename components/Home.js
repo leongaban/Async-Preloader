@@ -15,14 +15,6 @@ class Home extends React.Component {
     this.handleOnAddLoader = this.handleOnAddLoader.bind(this);
   }
 
-  componentWillReceiveProps() {
-    console.log('componentWillReceiveProps', this.props);
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate', this.props);
-  }
-
   render() {
     const { loaders } = this.props;
     const { preloaders } = this.state;

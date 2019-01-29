@@ -2,8 +2,6 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunkMiddleware from 'redux-thunk'
 
-// import { getProgress } from './services/api'
-
 const initialState = {
   loaders: []
 }
@@ -31,7 +29,7 @@ export const reducer = (state = initialState, action) => {
   }
 }
 
-// API
+// MOCK API
 export async function getProgress(dispatch) {
   try {
     const loaded = await loadProgress();
@@ -42,6 +40,7 @@ export async function getProgress(dispatch) {
   }
 }
 
+// Wait 1 sec before resolving promise
 function loadProgress() {
   return new Promise((resolve, reject) => {
       setTimeout(() => {

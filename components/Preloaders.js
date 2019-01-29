@@ -1,11 +1,6 @@
 class Preloaders extends React.Component {
-  componentWillReceiveProps() {
-    console.log('componentWillReceiveProps', this.props);
-  }
-
   render() {
     const { loaders, preloaders } = this.props;
-    console.log('loaders', loaders);
     return (
       <div className="preloaders">
         <div>
