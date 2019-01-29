@@ -2,7 +2,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start -p 8000"
+    "start": "next start -p"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
