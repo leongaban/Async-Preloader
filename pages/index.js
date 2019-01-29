@@ -44,7 +44,7 @@ class Home extends React.Component {
     console.log('> handleOnAddLoader clicked.');
     const { preloaders } = this.state;
     this.setState({
-      preloaders: new Array('preloader', ...preloaders)
+      preloaders: new Array('Preloader called', ...preloaders)
     });
     this.props.addLoader();
   }

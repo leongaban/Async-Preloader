@@ -13,7 +13,7 @@ class Preloaders extends React.Component {
             return (<span key={i}>{preloader}</span>);
           })}
           {loaders.map((loader, i) => {
-            return (<li key={i}>Data Loaded!</li>);
+            return (<li key={i}>Loaded!</li>);
           })}
         </div>
       </div>
