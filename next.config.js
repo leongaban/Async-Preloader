@@ -8,7 +8,9 @@ const { PHASE_PRODUCTION_SERVER } =
 module.exports = (phase, { defaultConfig }) => {
   if (phase === PHASE_PRODUCTION_SERVER) {
     // Config used to run in production.
-    return {};
+    return {
+      target: 'serverless'
+    };
   }
 
   // ✅ Put the require call here.
